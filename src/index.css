@@ -19,4 +19,8 @@
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
+  .bg-dots {
+    background-image: radial-gradient(rgba(130, 181, 64, 0.1) 1.5px, transparent 1.5px);
+    background-size: 24px 24px;
+  }
 }
