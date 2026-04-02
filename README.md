@@ -1,16 +1,40 @@
-# React + Vite
+# Marketly - Digital Asset Marketplace
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Marketly is a premium, enterprise-grade digital marketplace for high-quality themes, UI kits, and professional assets. It is built with a focus on clean aesthetics, high performance, and a seamless user experience.
 
-Currently, two official plugins are available:
+## 🚀 Key Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Global Shopping Cart**: A robust cart system managed via React Context with local storage persistence.
+- **Slide-over Drawer**: A professional, high-interaction cart experience using HeadlessUI.
+- **Enterprise UI**: A clean, trustworthy, and responsive design built with TailwindCSS.
+- **Micro-Interactions**: Snappy hover effects and instant feedback using `react-hot-toast`.
+- **Dynamic Category Filtering**: A sticky navigation system for easy asset discovery.
 
-## React Compiler
+## 🛠️ Technology Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Frontend**: [React](https://reactjs.org/) + [Vite](https://vitejs.dev/)
+- **Styling**: [TailwindCSS](https://tailwindcss.com/)
+- **UI Components**: [HeadlessUI](https://headlessui.com/)
+- **Icons**: [React Icons](https://react-icons.github.io/react-icons/)
+- **Notifications**: [React Hot Toast](https://react-hot-toast.com/)
 
-## Expanding the ESLint configuration
+## 📦 Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/swarajladke/Marketly.git
+   ```
+
+2. **Install dependencies**:
+   ```bash
+   npm install
+   ```
+
+3. **Run the development server**:
+   ```bash
+   npm run dev
+   ```
+
+## 📄 License
+
+This project is for demonstration purposes. All rights reserved.
