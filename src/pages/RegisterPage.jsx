@@ -18,13 +18,13 @@ const RegisterPage = () => {
               ★★★★★
             </div>
             <p className="text-white text-lg font-medium leading-relaxed mb-6">
-              "Joining Marketly was the best decision for my creative career. The platform is intuitive, and the community is incredibly supportive. I made my first $1,000 in just two weeks!"
+              "The quality of templates on Marketly is unparalleled. I was able to launch my startup's landing page in record time with their React components. Truly a game-changer!"
             </p>
             <div className="flex items-center gap-4">
-              <img src="https://i.pravatar.cc/150?img=47" alt="testimonial" className="w-12 h-12 rounded-full object-cover border-2 border-white" />
+              <img src="https://i.pravatar.cc/150?img=32" alt="testimonial" className="w-12 h-12 rounded-full object-cover border-2 border-white" />
               <div>
-                <h4 className="font-bold text-white leading-tight">Sarah Jenkins</h4>
-                <p className="text-white/80 text-sm">UI/UX Designer at CreativeSpace</p>
+                <h4 className="font-bold text-white leading-tight">Alex Rivera</h4>
+                <p className="text-white/80 text-sm">Founder at TechFlow</p>
               </div>
             </div>
           </div>
@@ -39,7 +39,7 @@ const RegisterPage = () => {
           </div>
           
           <h1 className="font-heading font-bold text-3xl text-dark mb-2">Create an account</h1>
-          <p className="text-muted mb-8">Join our community of over 10k creators.</p>
+          <p className="text-muted mb-8">Join our community of over 10k happy customers.</p>
 
           <form className="space-y-5">
             <div>

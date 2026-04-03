@@ -21,7 +21,7 @@ const Navbar = () => {
   const { toggleCart, cartItems } = useCart();
 
   return (
-    <nav className="bg-white sticky top-0 z-50 h-16 border-b border-border flex items-center">
+    <nav className="bg-white/80 backdrop-blur-xl sticky top-0 z-50 h-16 border-b border-silver-dark/20 flex items-center shadow-sm">
       <div className="container mx-auto px-4 flex justify-between items-center h-full">
         
         {/* Left: Logo */}
@@ -83,9 +83,6 @@ const Navbar = () => {
             <div className="w-[1px] h-6 bg-border mx-1"></div>
             <Link to="/login" className="font-medium text-dark hover:text-primary transition-colors">Login</Link>
             <Link to="/register" className="font-medium text-dark hover:text-primary transition-colors">Register</Link>
-            <Link to="/dashboard/upload" className="bg-primary hover:bg-primary-dark text-white px-5 py-2.5 rounded-btn font-medium transition-colors">
-              Start Selling
-            </Link>
           </div>
         </div>
 
@@ -142,9 +139,9 @@ const Navbar = () => {
           </div>
         </div>
         <div className="p-4 border-t border-border">
-          <Link to="/dashboard/upload" onClick={() => setMobileMenuOpen(false)} className="bg-primary text-white w-full py-3 rounded-btn font-medium flex justify-center">
-            Start Selling
-          </Link>
+          <div className="text-center text-xs text-muted">
+            © {new Date().getFullYear()} Marketly Store
+          </div>
         </div>
       </div>
     </nav>

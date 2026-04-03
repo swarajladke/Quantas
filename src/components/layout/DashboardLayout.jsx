@@ -7,11 +7,11 @@ const DashboardLayout = ({ children }) => {
   const location = useLocation();
 
   const navLinks = [
-    { name: 'Overview', path: '/dashboard', icon: <FiHome /> },
-    { name: 'My Products', path: '/dashboard/products', icon: <FiBox /> },
-    { name: 'Upload Product', path: '/dashboard/upload', icon: <FiUploadCloud /> },
-    { name: 'Earnings', path: '/dashboard/earnings', icon: <FiDollarSign /> },
-    { name: 'Settings', path: '/dashboard/settings', icon: <FiSettings /> },
+    { name: 'Overview', path: '/admin/overview', icon: <FiHome /> },
+    { name: 'Manage Products', path: '/admin/products', icon: <FiBox /> },
+    { name: 'Upload New Asset', path: '/admin/upload', icon: <FiUploadCloud /> },
+    { name: 'Sales & Earnings', path: '/admin/earnings', icon: <FiDollarSign /> },
+    { name: 'Store Settings', path: '/admin/settings', icon: <FiSettings /> },
   ];
 
   return (
@@ -34,7 +34,7 @@ const DashboardLayout = ({ children }) => {
         </div>
         
         <div className="p-6">
-          <p className="text-xs font-bold text-muted uppercase tracking-wider mb-4">Menu</p>
+          <p className="text-xs font-bold text-muted uppercase tracking-wider mb-4">Admin Menu</p>
           <nav className="flex flex-col gap-2">
             {navLinks.map((link) => (
               <Link 
@@ -56,10 +56,10 @@ const DashboardLayout = ({ children }) => {
 
         <div className="mt-auto p-6 border-t border-border">
           <div className="flex items-center gap-3">
-            <img src="https://i.pravatar.cc/150?img=11" alt="avatar" className="w-10 h-10 rounded-full object-cover" />
+            <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white font-bold text-lg shadow-sm">M</div>
             <div>
-              <p className="font-bold text-sm">Alex Morgan</p>
-              <p className="text-xs text-muted">Pro Seller</p>
+              <p className="font-bold text-sm">Marketly Admin</p>
+              <p className="text-xs text-primary font-bold">Store Owner</p>
             </div>
           </div>
         </div>

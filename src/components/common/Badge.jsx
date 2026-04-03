@@ -3,18 +3,20 @@ import React from 'react';
 const Badge = ({ variant, children, className = '' }) => {
   const getStyles = () => {
     switch (variant) {
+      case 'primary':
+        return 'bg-primary text-white border-primary';
       case 'bestseller':
         return 'bg-primary text-white border-primary';
       case 'new':
-        return 'bg-blue-500 text-white border-blue-500';
+        return 'bg-sky-500 text-white border-sky-500';
       case 'sale':
-        return 'bg-red-500 text-white border-red-500';
+        return 'bg-rose-500 text-white border-rose-500';
       case 'featured':
-        return 'bg-purple-500 text-white border-purple-500';
+        return 'bg-dark text-white border-dark';
       case 'pending':
         return 'bg-yellow-500 text-white border-yellow-500';
       default:
-        return 'bg-gray-200 text-dark border-gray-200';
+        return 'bg-surface text-dark border-border';
     }
   };
 

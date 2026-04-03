@@ -111,7 +111,7 @@ const ProductDetailPage = () => {
             <div className="absolute w-3.5 h-3.5 bg-primary rounded-full -left-[9px] top-1.5 ring-4 ring-white"></div>
             <h4 className="font-bold text-dark mb-1">Version 2.1.0</h4>
             <span className="text-xs text-primary bg-primary-light px-2 py-0.5 rounded-full font-bold mb-4 inline-block">Latest Update</span>
-            <span className="text-xs text-muted font-mono mb-3 block">October 24, 2026</span>
+            <span className="text-xs text-muted font-mono mb-3 block">March 28, 2026</span>
             <ul className="list-disc pl-5 text-sm text-muted space-y-2">
               <li>Added new dashboard layouts</li>
               <li>Fixed responsive issues on mobile Safari</li>
@@ -121,7 +121,7 @@ const ProductDetailPage = () => {
           <div className="border-l-2 border-border pl-6 relative">
             <div className="absolute w-3.5 h-3.5 bg-border rounded-full -left-[9px] top-1.5 ring-4 ring-white"></div>
             <h4 className="font-bold text-dark mb-1">Version 2.0.0</h4>
-            <span className="text-xs text-muted font-mono mb-3 block">September 12, 2026</span>
+            <span className="text-xs text-muted font-mono mb-3 block">February 12, 2026</span>
             <ul className="list-disc pl-5 text-sm text-muted space-y-2">
               <li>Complete UI overhaul with Tailwind CSS</li>
               <li>Added dark mode support</li>
@@ -194,8 +194,8 @@ const ProductDetailPage = () => {
               <h1 className="font-heading font-bold text-3xl xl:text-4xl text-dark mb-4 leading-tight">{product.title}</h1>
               <div className="flex items-center gap-6 text-sm text-muted">
                 <div className="flex items-center gap-2">
-                  <img src={product.seller.avatar} alt="seller" className="w-6 h-6 rounded-full object-cover" />
-                  By <span className="text-dark font-bold hover:text-primary cursor-pointer transition-colors">{product.seller.name}</span>
+                  <div className="w-6 h-6 rounded-lg bg-primary flex items-center justify-center text-white font-bold text-[10px]">M</div>
+                  Handcrafted by <span className="text-dark font-bold hover:text-primary transition-colors">Marketly</span>
                 </div>
                 <div className="flex items-center gap-1">
                   <FiStar className="text-yellow-400 fill-yellow-400" size={14} />
@@ -301,29 +301,31 @@ const ProductDetailPage = () => {
                 </div>
               </div>
 
-              {/* Seller Info Card */}
-              <div className="bg-white rounded-card shadow-sm border border-border p-6 mb-6 text-center">
-                <div className="relative inline-block mb-3">
-                  <img src={product.seller.avatar} alt="Seller" className="w-16 h-16 rounded-full object-cover ring-4 ring-surface" />
-                  {product.seller.verified && (
-                    <div className="absolute bottom-0 right-0 bg-white rounded-full p-[1px]">
-                      <FiCheckCircle className="text-primary fill-white" size={18} />
-                    </div>
-                  )}
-                </div>
-                <h3 className="font-bold text-dark text-lg mb-1">{product.seller.name}</h3>
-                <div className="flex items-center justify-center gap-4 text-sm mb-5">
-                  <div className="flex flex-col items-center">
-                    <div className="flex items-center gap-1">
-                      <FiStar className="text-yellow-400 fill-yellow-400" size={14} />
-                      <span className="font-bold text-dark">{product.seller.rating}</span>
-                    </div>
-                    <span className="text-xs text-muted mt-1">({product.seller.totalSales.toLocaleString()} Reviews)</span>
+              {/* About the Creator Card */}
+              <div className="bg-white rounded-card shadow-sm border border-border p-8 mb-6 text-center group">
+                <div className="relative inline-block mb-6">
+                  <div className="w-20 h-20 rounded-2xl bg-primary flex items-center justify-center text-white font-bold text-4xl shadow-lg group-hover:rotate-6 transition-transform">
+                    M
+                  </div>
+                  <div className="absolute -bottom-1 -right-1 bg-white rounded-full p-[2px]">
+                    <FiCheckCircle className="text-primary fill-white" size={24} />
                   </div>
                 </div>
-                <button className="w-full py-2.5 rounded-btn border border-border text-dark font-medium hover:bg-surface transition-colors">
-                  Follow
-                </button>
+                <h3 className="font-heading font-bold text-dark text-2xl mb-4 tracking-tight">Marketly Brand</h3>
+                <p className="text-muted text-sm leading-relaxed mb-6 italic">
+                  Pixel-perfect, high-performance web assets handcrafted with care by a dedicated full-stack developer and designer. 100% original work.
+                </p>
+                <div className="pt-6 border-t border-border flex items-center justify-center gap-6">
+                  <div className="flex flex-col items-center">
+                    <span className="font-bold text-dark text-lg">10k+</span>
+                    <span className="text-[10px] text-muted font-bold uppercase tracking-widest">Customers</span>
+                  </div>
+                  <div className="w-[1px] h-8 bg-border"></div>
+                  <div className="flex flex-col items-center">
+                    <span className="font-bold text-dark text-lg">4.9★</span>
+                    <span className="text-[10px] text-muted font-bold uppercase tracking-widest">Avg Rating</span>
+                  </div>
+                </div>
               </div>
 
               {/* Product Meta Table */}
@@ -332,7 +334,7 @@ const ProductDetailPage = () => {
                 <div className="flex flex-col gap-3 text-sm">
                   <div className="flex justify-between border-b border-border pb-3">
                     <span className="text-muted">Last Updated</span>
-                    <span className="text-dark font-bold">Oct 24, 2026</span>
+                    <span className="text-dark font-bold">Mar 28, 2026</span>
                   </div>
                   <div className="flex justify-between border-b border-border pb-3">
                     <span className="text-muted">Version</span>

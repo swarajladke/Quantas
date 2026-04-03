@@ -93,7 +93,7 @@ const CartDrawer = () => {
                                     </h3>
                                     <p className="ml-4">${product.price}</p>
                                   </div>
-                                  <p className="mt-1 text-sm text-muted">{product.seller.name}</p>
+                                  <p className="mt-1 text-[10px] font-black uppercase tracking-widest text-primary">{product.category}</p>
                                 </div>
                                 <div className="flex flex-1 items-end justify-between text-sm">
                                   <p className="text-muted">Personal License</p>

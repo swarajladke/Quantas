@@ -17,7 +17,7 @@ const Footer = () => {
               <span className="font-heading font-bold text-2xl text-dark tracking-tight">Marketly</span>
             </Link>
             <p className="text-muted mb-6">
-              The world's largest digital marketplace. Buy and sell themes, plugins, and digital assets from creators worldwide.
+              Buy premium themes, plugins, and templates built by one passionate creator. High quality, well-documented assets for your next project.
             </p>
             <div className="flex gap-4 text-muted">
               <a href="#" className="hover:text-primary transition-colors"><FaTwitter size={20} /></a>
@@ -39,15 +39,15 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Column 3: Support */}
+          {/* Column 3: About */}
           <div>
-            <h4 className="font-heading font-bold text-lg mb-6 text-dark">Support</h4>
+            <h4 className="font-heading font-bold text-lg mb-6 text-dark">About</h4>
             <ul className="flex flex-col gap-3 text-muted">
-              <li><a href="#" className="hover:text-primary transition-colors">Help Center</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Author Guides</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Community Forums</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Licenses & Pricing</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Contact Us</a></li>
+              <li><Link to="/about" className="hover:text-primary transition-colors">Our Story</Link></li>
+              <li><Link to="/blog" className="hover:text-primary transition-colors">Blog</Link></li>
+              <li><Link to="/careers" className="hover:text-primary transition-colors">Careers</Link></li>
+              <li><Link to="/press" className="hover:text-primary transition-colors">Press Kit</Link></li>
+              <li><Link to="/contact" className="hover:text-primary transition-colors">Contact Us</Link></li>
             </ul>
           </div>
 

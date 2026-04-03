@@ -7,19 +7,20 @@ import BrowsePage from './pages/BrowsePage'
 import ProductDetailPage from './pages/ProductDetailPage'
 import LoginPage from './pages/LoginPage'
 import RegisterPage from './pages/RegisterPage'
-import DashboardOverview from './pages/seller/DashboardOverview'
 import { CartProvider } from './context/CartContext'
 import CartDrawer from './components/cart/CartDrawer'
 import { Toaster } from 'react-hot-toast'
+import SmoothScroll from './components/common/SmoothScroll'
 
 function App() {
   const location = useLocation()
   
-  const hideLayoutConfig = ['/dashboard', '/login', '/register']
+  const hideLayoutConfig = ['/login', '/register', '/admin']
   const hideLayout = hideLayoutConfig.some(path => location.pathname.startsWith(path))
 
   return (
     <CartProvider>
+      <SmoothScroll />
       <div className="min-h-screen flex flex-col font-body text-dark">
         {!hideLayout && <Navbar />}
         <main className="flex-1 bg-surface z-0 relative">
@@ -29,7 +30,7 @@ function App() {
             <Route path="/product/:id" element={<ProductDetailPage />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/register" element={<RegisterPage />} />
-            <Route path="/dashboard/overview" element={<DashboardOverview />} />
+            <Route path="/admin" element={<div className="p-20 text-center font-heading font-bold text-3xl">Admin Panel Placeholder</div>} />
           </Routes>
         </main>
         {!hideLayout && <Footer />}

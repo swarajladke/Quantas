@@ -7,22 +7,22 @@ const LoginPage = () => {
   return (
     <div className="flex min-h-screen bg-white">
       {/* Left Side - Image/Pattern */}
-      <div className="hidden lg:flex lg:w-1/2 bg-primary-dark relative overflow-hidden flex-col justify-between p-12">
+      <div className="hidden lg:flex lg:w-1/2 bg-primary relative overflow-hidden flex-col justify-between p-12">
         <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] mix-blend-overlay"></div>
         <div className="relative z-10">
           <Link to="/" className="font-heading font-bold text-3xl text-white">Marketly.</Link>
         </div>
         <div className="relative z-10 max-w-md">
-          <h2 className="font-heading font-bold text-4xl text-white mb-6 leading-tight">Your gateway to world-class digital assets.</h2>
-          <p className="text-white/80 text-lg mb-8">Join thousands of creators who are already selling their amazing products on our platform.</p>
+          <h2 className="font-heading font-bold text-4xl text-white mb-6 leading-tight">Access your handcrafted digital assets.</h2>
+          <p className="text-white/80 text-lg mb-8">Sign in to manage your premium downloads, licenses, and exclusive early-access marketplace updates.</p>
           <div className="flex items-center gap-4">
             <div className="flex -space-x-3">
-              <img src="https://i.pravatar.cc/100?img=1" alt="user" className="w-10 h-10 rounded-full border-2 border-primary-dark" />
-              <img src="https://i.pravatar.cc/100?img=2" alt="user" className="w-10 h-10 rounded-full border-2 border-primary-dark" />
-              <img src="https://i.pravatar.cc/100?img=3" alt="user" className="w-10 h-10 rounded-full border-2 border-primary-dark" />
+              <img src="https://i.pravatar.cc/100?img=1" alt="user" className="w-10 h-10 rounded-full border-2 border-primary" />
+              <img src="https://i.pravatar.cc/100?img=2" alt="user" className="w-10 h-10 rounded-full border-2 border-primary" />
+              <img src="https://i.pravatar.cc/100?img=3" alt="user" className="w-10 h-10 rounded-full border-2 border-primary" />
             </div>
             <div className="text-white text-sm">
-              <span className="font-bold">10k+</span> creators
+              <span className="font-bold">10k+</span> customers
             </div>
           </div>
         </div>
