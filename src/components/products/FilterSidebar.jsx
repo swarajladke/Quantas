@@ -44,16 +44,16 @@ const FilterSidebar = ({
   const selectedPrice = priceRanges.find((range) => range.value === filters.priceRange)?.label || 'Any price';
 
   const sidebarContent = (
-    <div className="flex h-full flex-col overflow-hidden rounded-[28px] border border-white/60 bg-[linear-gradient(180deg,#ffffff,#f7fafc)] shadow-[0_24px_55px_-35px_rgba(15,23,42,0.45)]">
-      <div className="relative overflow-hidden border-b border-border px-5 py-5">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(130,181,64,0.18),_transparent_34%),radial-gradient(circle_at_bottom_right,_rgba(116,185,255,0.12),_transparent_28%)]" />
+    <div className="flex h-full flex-col overflow-hidden rounded-[28px] border border-primary/15 bg-[linear-gradient(180deg,rgba(255,95,218,0.1),rgba(4,4,5,0.98)_24%,rgba(0,0,0,0.99))] shadow-neon">
+      <div className="relative overflow-hidden border-b border-white/10 px-5 py-5">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(255,79,216,0.24),_transparent_34%),radial-gradient(circle_at_bottom_right,_rgba(255,43,214,0.14),_transparent_28%)]" />
         <div className="relative flex items-center justify-between gap-3">
           <div>
-            <div className="flex items-center gap-2 text-dark">
+            <div className="flex items-center gap-2 text-white">
               <FiSliders className="text-primary" />
               <h2 className="font-heading text-xl font-bold">Curate results</h2>
             </div>
-            <p className="mt-1 text-xs uppercase tracking-[0.24em] text-muted">
+            <p className="mt-1 text-xs uppercase tracking-[0.24em] text-white/50">
               {resultCount} products matching
             </p>
           </div>
@@ -61,7 +61,7 @@ const FilterSidebar = ({
             <button onClick={clearFilters} className="text-sm font-medium text-primary hover:underline">
               Reset
             </button>
-            <button className="p-1 text-dark lg:hidden" onClick={() => setMobileOpen(false)}>
+            <button className="p-1 text-white lg:hidden" onClick={() => setMobileOpen(false)}>
               <FiX size={24} />
             </button>
           </div>
@@ -69,39 +69,39 @@ const FilterSidebar = ({
       </div>
 
       <div className="flex h-full flex-col overflow-y-auto p-5 scrollbar-hide">
-        <div className="overflow-hidden rounded-[24px] border border-slate-900/8 bg-[linear-gradient(135deg,#f8fbf4,#eef6ff)] p-5 text-dark shadow-sm">
-          <div className="rounded-full border border-primary/15 bg-white/80 px-3 py-1 text-[10px] font-black uppercase tracking-[0.28em] text-primary">
+        <div className="overflow-hidden rounded-[24px] border border-primary/20 bg-[linear-gradient(135deg,rgba(255,95,218,0.2),rgba(48,12,38,0.94)_34%,rgba(18,8,16,0.96)_72%,rgba(255,43,214,0.1)_100%)] p-5 text-white shadow-neon">
+          <div className="rounded-full border border-white/12 bg-white/10 px-3 py-1 text-[10px] font-black uppercase tracking-[0.28em] text-primary">
             Filter mood
           </div>
           <p className="mt-4 font-heading text-[28px] font-bold leading-tight">
             {filters.category === 'All' ? 'All curated assets' : filters.category}
           </p>
-          <p className="mt-3 text-sm leading-relaxed text-muted">
+          <p className="mt-3 text-sm leading-relaxed text-white/68">
             Refine by compatibility, budget, and license to narrow the catalog quickly.
           </p>
           <div className="mt-5 grid grid-cols-2 gap-3">
-            <div className="rounded-2xl border border-slate-900/8 bg-white/85 p-3">
-              <p className="text-[10px] font-black uppercase tracking-[0.24em] text-muted">Budget lane</p>
-              <p className="mt-2 text-sm font-semibold text-dark">{selectedPrice}</p>
+            <div className="rounded-2xl border border-white/12 bg-white/10 p-3">
+              <p className="text-[10px] font-black uppercase tracking-[0.24em] text-white/55">Budget lane</p>
+              <p className="mt-2 text-sm font-semibold text-white">{selectedPrice}</p>
             </div>
-            <div className="rounded-2xl border border-slate-900/8 bg-white/85 p-3">
-              <p className="text-[10px] font-black uppercase tracking-[0.24em] text-muted">License</p>
-              <p className="mt-2 text-sm font-semibold capitalize text-dark">
+            <div className="rounded-2xl border border-white/12 bg-white/10 p-3">
+              <p className="text-[10px] font-black uppercase tracking-[0.24em] text-white/55">License</p>
+              <p className="mt-2 text-sm font-semibold capitalize text-white">
                 {filters.license === 'all' ? 'Any license' : filters.license}
               </p>
             </div>
           </div>
         </div>
 
-        <div className="mt-5 rounded-[24px] border border-border/70 bg-white/85 px-4 py-2 backdrop-blur">
+        <div className="mt-5 rounded-[24px] border border-primary/12 bg-[linear-gradient(180deg,rgba(10,8,12,0.98),rgba(8,8,10,0.98))] px-4 py-2 backdrop-blur">
           <FilterSection title="Category" defaultOpen={true}>
             <div className="flex max-h-60 flex-col gap-3 overflow-y-auto pr-1 scrollbar-hide">
               <button
                 onClick={() => toggleCategory('All')}
                 className={`flex items-center justify-between rounded-2xl border px-4 py-3 text-left transition-all ${
                   filters.category === 'All'
-                    ? 'border-primary/40 bg-primary/10 text-dark shadow-sm'
-                    : 'border-border text-muted hover:border-primary/40 hover:text-dark'
+                    ? 'border-primary/40 bg-[linear-gradient(135deg,rgba(255,95,218,0.18),rgba(255,43,214,0.1)_100%)] text-white shadow-sm'
+                    : 'border-white/10 text-white/60 hover:border-primary/40 hover:text-white'
                 }`}
               >
                 <span className="font-medium">All categories</span>
@@ -114,12 +114,12 @@ const FilterSidebar = ({
                   onClick={() => toggleCategory(category.name)}
                   className={`flex items-center justify-between rounded-2xl border px-4 py-3 text-left transition-all ${
                     filters.category === category.name
-                      ? 'border-primary/40 bg-primary/10 text-dark shadow-sm'
-                      : 'border-border text-muted hover:border-primary/40 hover:text-dark'
+                      ? 'border-primary/40 bg-[linear-gradient(135deg,rgba(255,95,218,0.18),rgba(255,43,214,0.1)_100%)] text-white shadow-sm'
+                      : 'border-white/10 text-white/60 hover:border-primary/40 hover:text-white'
                   }`}
                 >
                   <span className="font-medium">{category.name}</span>
-                  <span className="rounded-full bg-surface px-2 py-0.5 text-xs text-muted">
+                  <span className="rounded-full bg-white/8 px-2 py-0.5 text-xs text-white/55">
                     {category.productCount.toLocaleString()}
                   </span>
                 </button>
@@ -135,8 +135,8 @@ const FilterSidebar = ({
                   onClick={() => setPriceRange(range.value)}
                   className={`rounded-2xl border px-4 py-3 text-left text-sm font-medium transition-all ${
                     filters.priceRange === range.value
-                      ? 'border-primary/40 bg-primary/10 text-dark shadow-sm'
-                      : 'border-border text-muted hover:border-primary/40 hover:text-dark'
+                      ? 'border-primary/40 bg-[linear-gradient(135deg,rgba(255,95,218,0.18),rgba(255,43,214,0.1)_100%)] text-white shadow-sm'
+                      : 'border-white/10 text-white/60 hover:border-primary/40 hover:text-white'
                   }`}
                 >
                   {range.label}
@@ -153,16 +153,16 @@ const FilterSidebar = ({
                   onClick={() => setRating(filters.rating === rating ? null : rating)}
                   className={`flex items-center gap-3 rounded-2xl border p-3 text-left transition-all ${
                     filters.rating === rating
-                      ? 'border-primary/40 bg-primary/10 shadow-sm'
-                      : 'border-border hover:border-primary/40 hover:bg-surface'
+                      ? 'border-primary/40 bg-[linear-gradient(135deg,rgba(255,95,218,0.18),rgba(255,43,214,0.1)_100%)] shadow-sm'
+                      : 'border-white/10 hover:border-primary/40 hover:bg-white/6'
                   }`}
                 >
                   <div className="flex text-yellow-400">
                     {[...Array(5)].map((_, index) => (
-                      <FiStar key={index} className={index < rating ? 'fill-current' : 'text-border'} size={16} />
+                      <FiStar key={index} className={index < rating ? 'fill-current' : 'text-white/15'} size={16} />
                     ))}
                   </div>
-                  <span className="font-medium text-dark">{rating === 5 ? '5.0 only' : `${rating}.0 and up`}</span>
+                  <span className="font-medium text-white">{rating === 5 ? '5.0 only' : `${rating}.0 and up`}</span>
                 </button>
               ))}
             </div>
@@ -180,8 +180,8 @@ const FilterSidebar = ({
                   onClick={() => setLicense(option.value)}
                   className={`rounded-2xl border px-4 py-3 text-sm font-medium transition-all ${
                     filters.license === option.value
-                      ? 'border-primary/40 bg-primary/10 text-dark shadow-sm'
-                      : 'border-border text-muted hover:border-primary/40 hover:text-dark'
+                      ? 'border-primary/40 bg-[linear-gradient(135deg,rgba(255,95,218,0.18),rgba(255,43,214,0.1)_100%)] text-white shadow-sm'
+                      : 'border-white/10 text-white/60 hover:border-primary/40 hover:text-white'
                   }`}
                 >
                   {option.label}
@@ -202,7 +202,7 @@ const FilterSidebar = ({
                     className={`rounded-full border px-4 py-2 text-sm font-medium transition-all ${
                       isActive
                         ? 'border-primary/30 bg-primary text-white shadow-lg shadow-primary/20'
-                        : 'border-border bg-white text-muted hover:border-primary/40 hover:text-dark'
+                        : 'border-white/10 bg-white/5 text-white/60 hover:border-primary/40 hover:text-white'
                     }`}
                   >
                     {software}
@@ -213,33 +213,33 @@ const FilterSidebar = ({
           </FilterSection>
         </div>
 
-        <div className="mt-5 rounded-[24px] border border-white/70 bg-[linear-gradient(135deg,#ffffff,#f8fbff)] p-5 shadow-sm">
+        <div className="mt-5 rounded-[24px] border border-secondary/15 bg-[linear-gradient(135deg,rgba(168,85,247,0.16),rgba(14,11,24,0.96)_60%,rgba(255,43,214,0.08)_100%)] p-5 shadow-neon">
           <p className="text-[11px] font-black uppercase tracking-[0.26em] text-primary">
             Studio note
           </p>
-          <h3 className="mt-3 font-heading text-2xl font-bold leading-tight text-dark">
+          <h3 className="mt-3 font-heading text-2xl font-bold leading-tight text-white">
             One creator. Cleaner picks.
           </h3>
-          <p className="mt-3 text-sm leading-relaxed text-muted">
+          <p className="mt-3 text-sm leading-relaxed text-white/66">
             This catalog is curated like a private design library, so the left rail should feel more like guidance than empty chrome.
           </p>
           <div className="mt-4 grid grid-cols-2 gap-3">
-            <div className="rounded-2xl border border-slate-900/8 bg-surface/80 p-3">
-              <p className="text-[10px] font-black uppercase tracking-[0.22em] text-muted">Focus</p>
-              <p className="mt-2 text-sm font-semibold text-dark">Fewer, stronger assets</p>
+            <div className="rounded-2xl border border-white/12 bg-white/8 p-3">
+              <p className="text-[10px] font-black uppercase tracking-[0.22em] text-white/52">Focus</p>
+              <p className="mt-2 text-sm font-semibold text-white">Fewer, stronger assets</p>
             </div>
-            <div className="rounded-2xl border border-slate-900/8 bg-surface/80 p-3">
-              <p className="text-[10px] font-black uppercase tracking-[0.22em] text-muted">Tone</p>
-              <p className="mt-2 text-sm font-semibold text-dark">Curated, not crowded</p>
+            <div className="rounded-2xl border border-white/12 bg-white/8 p-3">
+              <p className="text-[10px] font-black uppercase tracking-[0.22em] text-white/52">Tone</p>
+              <p className="mt-2 text-sm font-semibold text-white">Curated, not crowded</p>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="border-t border-border p-4 lg:hidden">
+      <div className="border-t border-white/10 p-4 lg:hidden">
         <button
           onClick={() => setMobileOpen(false)}
-          className="w-full rounded-2xl bg-primary px-4 py-3 text-sm font-bold uppercase tracking-[0.22em] text-white"
+          className="w-full rounded-2xl bg-brand-gradient px-4 py-3 text-sm font-bold uppercase tracking-[0.22em] text-white shadow-neon"
         >
           Apply filters
         </button>

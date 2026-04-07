@@ -19,7 +19,7 @@ const CartDrawer = () => {
           leaveFrom="opacity-100"
           leaveTo="opacity-0"
         >
-          <div className="fixed inset-0 bg-dark/40 backdrop-blur-sm transition-opacity" />
+          <div className="fixed inset-0 bg-black/60 backdrop-blur-md transition-opacity" />
         </Transition.Child>
 
         <div className="fixed inset-0 overflow-hidden">
@@ -35,17 +35,17 @@ const CartDrawer = () => {
                 leaveTo="translate-x-full"
               >
                 <Dialog.Panel className="pointer-events-auto w-screen max-w-md">
-                  <div className="flex h-full flex-col bg-white shadow-2xl">
+                  <div className="gallery-panel flex h-full flex-col rounded-l-[30px] border-l border-primary/15 shadow-2xl">
                     
                     {/* Header */}
-                    <div className="flex items-start justify-between px-6 py-6 border-b border-border">
-                      <Dialog.Title className="text-lg font-heading font-bold text-dark">
+                    <div className="flex items-start justify-between border-b border-white/10 px-6 py-6">
+                      <Dialog.Title className="text-lg font-heading font-bold text-white">
                         Shopping Cart
                       </Dialog.Title>
                       <div className="ml-3 flex h-7 items-center">
                         <button
                           type="button"
-                          className="relative -m-2 p-2 text-muted hover:text-dark transition-colors"
+                          className="relative -m-2 p-2 text-white/50 transition-colors hover:text-white"
                           onClick={() => setIsCartOpen(false)}
                         >
                           <span className="absolute -inset-0.5" />
@@ -59,23 +59,23 @@ const CartDrawer = () => {
                     <div className="flex-1 overflow-y-auto px-6 py-6">
                       {cartItems.length === 0 ? (
                         <div className="flex flex-col items-center justify-center h-full text-center">
-                          <div className="w-24 h-24 bg-surface rounded-full flex items-center justify-center mb-4">
-                            <FiX className="text-muted w-10 h-10" />
+                          <div className="gallery-chip mb-4 flex h-24 w-24 items-center justify-center rounded-full">
+                            <FiX className="h-10 w-10 text-white/40" />
                           </div>
-                          <p className="text-dark font-heading font-bold text-xl mb-2">Your cart is empty</p>
-                          <p className="text-muted mb-6">Looks like you haven't added any premium assets yet.</p>
+                          <p className="mb-2 font-heading text-xl font-bold text-white">Your cart is empty</p>
+                          <p className="mb-6 text-white/58">Looks like you haven't added any premium assets yet.</p>
                           <button 
                             onClick={() => setIsCartOpen(false)}
-                            className="bg-primary hover:bg-primary-dark text-white font-bold py-3 px-6 rounded-btn transition-colors"
+                            className="rounded-btn bg-brand-gradient px-6 py-3 font-bold text-white transition-colors hover:shadow-neon"
                           >
                             Browse Assets
                           </button>
                         </div>
                       ) : (
-                        <ul role="list" className="-my-6 divide-y divide-border">
+                        <ul role="list" className="-my-6 divide-y divide-white/10">
                           {cartItems.map((product) => (
                             <li key={product.id} className="flex py-6">
-                              <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-border">
+                              <div className="gallery-frame h-24 w-24 flex-shrink-0 rounded-[18px]">
                                 <img
                                   src={product.previewImage}
                                   alt={product.title}
@@ -85,7 +85,7 @@ const CartDrawer = () => {
 
                               <div className="ml-4 flex flex-1 flex-col">
                                 <div>
-                                  <div className="flex justify-between text-base font-bold text-dark">
+                                  <div className="flex justify-between text-base font-bold text-white">
                                     <h3 className="line-clamp-2">
                                       <Link to={`/product/${product.id}`} onClick={() => setIsCartOpen(false)}>
                                         {product.title}
@@ -96,13 +96,13 @@ const CartDrawer = () => {
                                   <p className="mt-1 text-[10px] font-black uppercase tracking-widest text-primary">{product.category}</p>
                                 </div>
                                 <div className="flex flex-1 items-end justify-between text-sm">
-                                  <p className="text-muted">Personal License</p>
+                                  <p className="text-white/50">Personal License</p>
 
                                   <div className="flex">
                                     <button
                                       type="button"
                                       onClick={() => removeFromCart(product.id)}
-                                      className="font-medium text-red-500 hover:text-red-700 flex items-center gap-1"
+                                      className="flex items-center gap-1 font-medium text-rose-400 hover:text-rose-300"
                                     >
                                       <FiTrash2 size={16} /> Remove
                                     </button>
@@ -117,28 +117,28 @@ const CartDrawer = () => {
 
                     {/* Footer (Subtotal & Checkout) */}
                     {cartItems.length > 0 && (
-                      <div className="border-t border-border px-6 py-6 bg-surface/50">
-                        <div className="flex justify-between text-base font-bold text-dark mb-4">
+                      <div className="border-t border-white/10 px-6 py-6">
+                        <div className="mb-4 flex justify-between text-base font-bold text-white">
                           <p>Subtotal</p>
                           <p>${cartTotal.toFixed(2)}</p>
                         </div>
-                        <p className="mt-0.5 text-sm text-muted mb-6">
+                        <p className="mt-0.5 mb-6 text-sm text-white/58">
                           Taxes and licenses calculated at checkout.
                         </p>
                         <div className="mt-6">
                           <Link
                             to="#"
-                            className="flex items-center justify-center rounded-btn border border-transparent bg-primary px-6 py-4 text-base font-bold text-white shadow-sm hover:bg-primary-dark transition-colors"
+                            className="flex items-center justify-center rounded-btn border border-transparent bg-brand-gradient px-6 py-4 text-base font-bold text-white shadow-sm transition-colors hover:shadow-neon"
                           >
                             Proceed to Checkout
                           </Link>
                         </div>
-                        <div className="mt-6 flex justify-center text-center text-sm text-muted">
+                        <div className="mt-6 flex justify-center text-center text-sm text-white/52">
                           <p>
                             or{' '}
                             <button
                               type="button"
-                              className="font-bold text-primary hover:text-primary-dark"
+                              className="font-bold text-primary hover:text-white"
                               onClick={() => setIsCartOpen(false)}
                             >
                               Continue Shopping

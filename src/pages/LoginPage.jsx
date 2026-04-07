@@ -9,16 +9,16 @@ const loginHeroImage = 'https://images.pexels.com/photos/3630025/pexels-photo-36
 const LoginPage = () => {
   useDocumentTitle('Sign In');
   return (
-    <div className="flex min-h-screen bg-white">
+    <div className="flex min-h-screen bg-[linear-gradient(135deg,#000000,#010101_48%,#000000)]">
       <div
         className="relative hidden overflow-hidden lg:flex lg:w-1/2 flex-col justify-between p-12"
         style={{
-          backgroundImage: `linear-gradient(180deg, rgba(6, 14, 29, 0.48), rgba(6, 14, 29, 0.84)), url(${loginHeroImage})`,
+          backgroundImage: `linear-gradient(180deg, rgba(255, 79, 216, 0.12), rgba(8, 7, 14, 0.28) 24%, rgba(8, 7, 14, 0.86)), url(${loginHeroImage})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}
       >
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(255,255,255,0.12),_transparent_28%),linear-gradient(135deg,rgba(130,181,64,0.12),transparent_40%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(255,79,216,0.22),_transparent_28%),radial-gradient(circle_at_bottom_right,_rgba(56,189,248,0.16),_transparent_24%),linear-gradient(135deg,rgba(168,85,247,0.14),transparent_40%)]" />
 
         <div className="relative z-10">
           <Link to="/" className="font-heading text-3xl font-bold text-white">
@@ -108,7 +108,7 @@ const LoginPage = () => {
               <div className="w-full border-t border-border"></div>
             </div>
             <div className="relative flex justify-center text-sm">
-              <span className="bg-white px-4 text-muted">Or continue with</span>
+              <span className="bg-cosmos-950 px-4 text-muted">Or continue with</span>
             </div>
           </div>
 

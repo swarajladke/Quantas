@@ -5,14 +5,14 @@ const Tabs = ({ tabs }) => {
 
   return (
     <div className="w-full">
-      <div className="flex overflow-x-auto rounded-[24px] border border-border bg-surface p-1.5 scrollbar-hide">
+      <div className="gallery-panel flex overflow-x-auto rounded-[24px] p-1.5 scrollbar-hide">
         {tabs.map((tab, index) => (
           <button
             key={index}
             className={`relative whitespace-nowrap rounded-[18px] px-5 py-3 text-sm font-bold transition-colors ${
               activeTab === index
-                ? 'bg-white text-dark shadow-sm'
-                : 'text-muted hover:text-dark'
+                ? 'gallery-chip text-white shadow-sm'
+                : 'text-white/55 hover:text-white'
             }`}
             onClick={() => setActiveTab(index)}
           >

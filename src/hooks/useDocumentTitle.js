@@ -7,7 +7,7 @@ import { useEffect } from 'react';
 const useDocumentTitle = (title) => {
   useEffect(() => {
     const prev = document.title;
-    document.title = title ? `${title} | Marketly` : 'Marketly — Premium Digital Assets';
+    document.title = title ? `${title} | Marketly` : 'Marketly - Premium Digital Assets';
     return () => {
       document.title = prev;
     };

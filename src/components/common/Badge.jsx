@@ -4,24 +4,23 @@ const Badge = ({ variant, children, className = '' }) => {
   const getStyles = () => {
     switch (variant) {
       case 'primary':
-        return 'bg-primary text-white border-primary';
       case 'bestseller':
-        return 'bg-primary text-white border-primary';
+        return 'bg-brand-gradient text-white border-transparent shadow-neon';
       case 'new':
-        return 'bg-sky-500 text-white border-sky-500';
+        return 'bg-brand-gradient text-white border-transparent shadow-neon';
       case 'sale':
         return 'bg-rose-500 text-white border-rose-500';
       case 'featured':
-        return 'bg-dark text-white border-dark';
+        return 'gallery-chip text-white border-white/10';
       case 'pending':
         return 'bg-yellow-500 text-white border-yellow-500';
       default:
-        return 'bg-surface text-dark border-border';
+        return 'gallery-chip text-white border-white/10';
     }
   };
 
   return (
-    <span className={`px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider rounded-full border ${getStyles()} ${className}`}>
+    <span className={`rounded-full border px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider ${getStyles()} ${className}`}>
       {children}
     </span>
   );

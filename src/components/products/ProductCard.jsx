@@ -14,36 +14,34 @@ const ProductCard = ({ product, index = 0, viewMode = 'grid' }) => {
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-50px' }}
-      transition={{ duration: 0.5, delay: index * 0.08, ease: 'easeOut' }}
-      whileHover={isListView ? { y: -4 } : { y: -12, scale: 1.02 }}
-      className={`group relative overflow-hidden rounded-[26px] border border-silver-dark/30 bg-white transition-all duration-300 hover:border-primary/40 hover:shadow-card-hover ${
+      transition={{ duration: 0.55, delay: index * 0.08, ease: 'easeOut' }}
+      whileHover={isListView ? { y: -3 } : { y: -8, scale: 1.015 }}
+      className={`gallery-panel group rounded-[30px] text-white transition-all duration-500 ease-out hover:border-primary/30 hover:shadow-neon ${
         isListView ? 'flex flex-col md:flex-row' : 'flex h-full flex-col'
       }`}
     >
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(130,181,64,0.08),_transparent_32%),radial-gradient(circle_at_bottom_left,_rgba(116,185,255,0.08),_transparent_28%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-
       <Link
         to={`/product/${product.id}`}
-        className={`relative block overflow-hidden bg-surface ${isListView ? 'md:w-[40%]' : 'aspect-[16/10]'}`}
+        className={`gallery-frame relative m-3 block rounded-[24px] ${isListView ? 'md:w-[40%]' : 'aspect-[16/10]'}`}
       >
         <img
           src={product.previewImage}
           alt={product.title}
-          className={`absolute inset-0 h-full w-full object-cover transition-transform duration-1000 ease-out group-hover:scale-110 ${
+          className={`absolute inset-0 h-full w-full object-cover transition-transform duration-[1400ms] ease-out group-hover:scale-105 ${
             isListView ? 'min-h-[240px]' : ''
           }`}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,95,218,0.05),rgba(255,43,214,0.05)_24%,rgba(0,0,0,0.72))] opacity-80 transition-opacity duration-500 group-hover:opacity-100" />
 
         {product.badge && (
           <div className="absolute left-4 top-4 z-10">
-            <Badge variant={product.badge.toLowerCase()} className="shadow-lg shadow-primary/20">
+            <Badge variant={product.badge.toLowerCase()} className="shadow-lg shadow-primary/25">
               {product.badge}
             </Badge>
           </div>
         )}
 
-        <div className="absolute right-4 top-4 z-10 rounded-full border border-white/20 bg-black/30 px-3 py-1 text-[10px] font-black uppercase tracking-[0.22em] text-white backdrop-blur">
+        <div className="gallery-chip absolute right-4 top-4 z-10 rounded-full px-3 py-1 text-[10px] font-black uppercase tracking-[0.22em] text-white backdrop-blur">
           {product.compatibility[0]}
         </div>
 
@@ -51,7 +49,7 @@ const ProductCard = ({ product, index = 0, viewMode = 'grid' }) => {
           <Motion.div
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="flex items-center gap-2 whitespace-nowrap rounded-full border border-white/20 bg-white/90 px-6 py-2.5 text-[10px] font-black uppercase tracking-widest text-dark shadow-2xl backdrop-blur-md"
+            className="gallery-chip flex items-center gap-2 whitespace-nowrap rounded-full px-6 py-2.5 text-[10px] font-black uppercase tracking-widest text-white shadow-2xl backdrop-blur-md transition-transform duration-300 ease-out"
           >
             Explore details
             <FiArrowRight className="text-primary transition-transform group-hover:translate-x-1" />
@@ -59,40 +57,40 @@ const ProductCard = ({ product, index = 0, viewMode = 'grid' }) => {
         </div>
       </Link>
 
-      <div className="flex flex-1 flex-col p-6">
+      <div className="relative z-[1] flex flex-1 flex-col px-6 pb-6 pt-3">
         <div className="mb-4 space-y-3">
           <div className="flex flex-wrap items-center gap-2">
-            <span className="rounded-full bg-primary/10 px-3 py-1 text-[10px] font-black uppercase tracking-[0.24em] text-primary">
+            <span className="rounded-full border border-primary/15 bg-primary/10 px-3 py-1 text-[10px] font-black uppercase tracking-[0.24em] text-primary">
               {product.category}
             </span>
-            <span className="rounded-full bg-dark/[0.04] px-3 py-1 text-[10px] font-bold uppercase tracking-[0.2em] text-muted">
+            <span className="gallery-chip rounded-full px-3 py-1 text-[10px] font-bold uppercase tracking-[0.2em] text-white/58">
               {product.license === 'extended' ? 'Extended license' : 'Regular license'}
             </span>
           </div>
 
           <div className="flex items-start justify-between gap-3">
             <Link to={`/product/${product.id}`} className="transition-colors duration-300 hover:text-primary">
-              <h3 className={`font-heading font-bold leading-tight text-dark ${isListView ? 'line-clamp-2 text-2xl' : 'line-clamp-2 text-[1.55rem]'}`}>
+              <h3 className={`font-heading font-bold leading-tight text-white ${isListView ? 'line-clamp-2 text-2xl' : 'line-clamp-2 text-[1.55rem]'}`}>
                 {product.title}
               </h3>
             </Link>
-            <span className="whitespace-nowrap rounded-full bg-dark px-3 py-1.5 text-base font-bold text-white shadow-sm">
+            <span className="whitespace-nowrap rounded-full border border-primary/15 bg-brand-gradient px-3 py-1.5 text-base font-bold text-white shadow-neon">
               ${product.price}
             </span>
           </div>
 
-          <div className="flex flex-wrap items-center gap-2 text-xs text-muted">
-            <div className="flex items-center gap-1 font-bold text-dark">
+          <div className="flex flex-wrap items-center gap-2 text-xs text-white/56">
+            <div className="flex items-center gap-1 font-bold text-white">
               <FiStar className="fill-current text-yellow-400" />
               {product.rating}
             </div>
             <span>{product.reviewCount} reviews</span>
-            <span className="h-1 w-1 rounded-full bg-border" />
+            <span className="h-1 w-1 rounded-full bg-white/18" />
             <span>{product.sales} sales</span>
           </div>
         </div>
 
-        <p className={`mb-6 flex-1 text-sm leading-relaxed text-muted ${isListView ? 'line-clamp-3 max-w-2xl' : 'line-clamp-3'}`}>
+        <p className={`mb-6 flex-1 text-sm leading-relaxed text-white/66 ${isListView ? 'line-clamp-3 max-w-2xl' : 'line-clamp-3'}`}>
           {product.description}
         </p>
 
@@ -100,16 +98,16 @@ const ProductCard = ({ product, index = 0, viewMode = 'grid' }) => {
           {product.tags.slice(0, isListView ? 4 : 3).map((tag) => (
             <span
               key={tag}
-              className="rounded-full border border-border bg-white px-3 py-1 text-[11px] font-medium text-muted transition-colors group-hover:border-primary/30 group-hover:text-dark"
+              className="rounded-full border border-primary/12 bg-[linear-gradient(135deg,rgba(255,95,218,0.08),rgba(255,43,214,0.06)_100%)] px-3 py-1 text-[11px] font-medium text-white/62 transition-colors group-hover:border-primary/30 group-hover:text-white"
             >
               {tag}
             </span>
           ))}
         </div>
 
-        <div className={`mt-auto rounded-[22px] border border-border/70 bg-slate-50/80 px-4 py-4 ${isListView ? 'flex flex-col gap-4 xl:flex-row xl:items-center xl:justify-between' : 'flex items-center justify-between gap-3'}`}>
-          <div className={`flex ${isListView ? 'flex-wrap gap-x-5 gap-y-2' : 'flex-col gap-2'} text-xs text-muted`}>
-            <span className="font-bold uppercase tracking-[0.18em] text-dark/80">
+        <div className={`gallery-chip mt-auto rounded-[24px] px-4 py-4 ${isListView ? 'flex flex-col gap-4 xl:flex-row xl:items-center xl:justify-between' : 'flex items-center justify-between gap-3'}`}>
+          <div className={`flex ${isListView ? 'flex-wrap gap-x-5 gap-y-2' : 'flex-col gap-2'} text-xs text-white/52`}>
+            <span className="font-bold uppercase tracking-[0.18em] text-white/78">
               {product.createdBy}
             </span>
             <div className={`flex ${isListView ? 'flex-wrap gap-x-5 gap-y-2' : 'flex-wrap gap-2'}`}>
@@ -129,7 +127,7 @@ const ProductCard = ({ product, index = 0, viewMode = 'grid' }) => {
               event.preventDefault();
               addToCart(product);
             }}
-            className={`flex items-center justify-center gap-2 rounded-2xl border border-primary/10 bg-primary/5 text-primary transition-all duration-300 hover:bg-primary hover:text-white hover:shadow-lg hover:shadow-primary/30 ${
+            className={`flex items-center justify-center gap-2 rounded-2xl border border-primary/20 bg-primary/12 text-primary transition-all duration-500 ease-out hover:bg-brand-gradient hover:text-white hover:shadow-neon ${
               isListView ? 'self-start px-4 py-3 text-sm font-bold' : 'h-10 w-10'
             }`}
           >

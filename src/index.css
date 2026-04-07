@@ -2,9 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --cosmos-bg: #000000;
+  --cosmos-surface: rgba(1, 1, 2, 0.98);
+  --cosmos-surface-soft: rgba(5, 5, 7, 0.96);
+  --cosmos-border: rgba(255, 255, 255, 0.08);
+  --cosmos-text: #f7f2ff;
+  --cosmos-muted: #b8b0cb;
+  --brand-gradient: linear-gradient(135deg, #ffb0f2 0%, #ff69e6 18%, #ff2bd6 42%, #d946ef 68%, #8b5cf6 100%);
+}
+
 @layer base {
   body {
     @apply font-body text-dark bg-surface;
+    background:
+      radial-gradient(circle at 16% 8%, rgba(255, 95, 218, 0.12), transparent 24%),
+      radial-gradient(circle at 74% 14%, rgba(255, 43, 214, 0.09), transparent 22%),
+      radial-gradient(circle at 52% 18%, rgba(217, 70, 239, 0.06), transparent 24%),
+      radial-gradient(circle at 58% 100%, rgba(255, 79, 216, 0.05), transparent 30%),
+      linear-gradient(180deg, #000000 0%, #010101 48%, #000000 100%);
+    min-height: 100vh;
   }
   h1, h2, h3, h4, h5, h6 {
     @apply font-heading;
@@ -23,6 +40,113 @@
     background-image: radial-gradient(rgba(130, 181, 64, 0.1) 1.5px, transparent 1.5px);
     background-size: 24px 24px;
   }
+
+  .brand-text {
+    background-image: var(--brand-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .glass-panel {
+    background: linear-gradient(135deg, rgba(255, 95, 218, 0.05), rgba(10, 7, 12, 0.97) 18%, rgba(1, 1, 2, 0.995) 60%, rgba(255, 43, 214, 0.03) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 30px 96px -52px rgba(0, 0, 0, 0.96), 0 12px 36px -28px rgba(255, 43, 214, 0.08);
+    backdrop-filter: blur(20px);
+  }
+
+  .gallery-panel {
+    position: relative;
+    overflow: hidden;
+    background:
+      radial-gradient(circle at top right, rgba(255, 95, 218, 0.04), transparent 24%),
+      linear-gradient(145deg, rgba(6, 5, 8, 0.995) 0%, rgba(0, 0, 0, 0.998) 58%, rgba(7, 5, 9, 0.995) 100%);
+    box-shadow:
+      0 34px 96px -54px rgba(0, 0, 0, 0.97),
+      0 18px 44px -38px rgba(255, 95, 218, 0.06);
+    backdrop-filter: blur(18px);
+  }
+
+  .gallery-panel::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.035), transparent 18%),
+      radial-gradient(circle at bottom left, rgba(255, 43, 214, 0.03), transparent 20%);
+    opacity: 0.65;
+  }
+
+  .gallery-frame {
+    position: relative;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.96);
+    box-shadow:
+      0 30px 84px -48px rgba(0, 0, 0, 0.97),
+      0 16px 38px -34px rgba(255, 95, 218, 0.06);
+  }
+
+  .gallery-frame::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    box-shadow: none;
+  }
+
+  .gallery-chip {
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    background: linear-gradient(135deg, rgba(4, 4, 6, 0.995), rgba(9, 7, 11, 0.99) 58%, rgba(5, 4, 6, 0.995) 100%);
+    box-shadow: 0 18px 40px -30px rgba(0, 0, 0, 0.9);
+  }
+}
+
+.theme-neon {
+  color: var(--cosmos-text);
+}
+
+.theme-neon [class*="bg-white"] {
+  background: linear-gradient(145deg, rgba(0, 0, 0, 0.995), rgba(5, 5, 7, 0.985)) !important;
+  backdrop-filter: blur(18px);
+}
+
+.theme-neon [class*="bg-surface"] {
+  background: linear-gradient(145deg, rgba(1, 1, 2, 0.995), rgba(6, 6, 8, 0.985)) !important;
+}
+
+.theme-neon [class*="bg-silver-light"],
+.theme-neon [class*="bg-silver-medium"] {
+  background-color: #000000 !important;
+}
+
+.theme-neon [class*="bg-liquid-chrome"] {
+  background:
+    linear-gradient(135deg, rgba(5, 5, 6, 0.98) 0%, rgba(1, 1, 1, 0.98) 50%, rgba(6, 6, 8, 0.98) 100%) !important;
+}
+
+.theme-neon [class*="text-dark"] {
+  color: var(--cosmos-text) !important;
+}
+
+.theme-neon [class*="text-muted"] {
+  color: var(--cosmos-muted) !important;
+}
+
+.theme-neon [class*="border-border"],
+.theme-neon [class*="border-silver"] {
+  border-color: var(--cosmos-border) !important;
+}
+
+.theme-neon .shadow-sm,
+.theme-neon .shadow-card,
+.theme-neon .shadow-card-hover {
+  box-shadow:
+    0 26px 64px -38px rgba(0, 0, 0, 0.88),
+    0 18px 48px -30px rgba(255, 95, 218, 0.18),
+    0 14px 32px -24px rgba(255, 43, 214, 0.16) !important;
 }
 
 /* Lenis Recommended CSS */

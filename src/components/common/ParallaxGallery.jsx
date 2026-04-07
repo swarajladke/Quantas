@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion as Motion, useScroll, useTransform } from 'framer-motion';
 
 const galleryImages = [
   // ── Row 1: Top zone ──
@@ -172,12 +172,12 @@ function ParallaxImage({ image, scrollYProgress }) {
   const opacity = useTransform(scrollYProgress, [0, 0.08, 0.88, 1], [0.2, 1, 1, 0.3]);
 
   return (
-    <motion.div
+    <Motion.div
       className={`absolute ${image.position} ${image.zIndex}`}
       style={{ x, y, rotate, scale, opacity }}
     >
       <div
-        className={`${image.width} overflow-hidden ${image.rounded} shadow-[0_20px_70px_-20px_rgba(0,0,0,0.45)] ring-1 ring-white/20 transition-shadow duration-500 hover:shadow-[0_30px_90px_-20px_rgba(0,0,0,0.6)] hover:ring-white/40`}
+        className={`${image.width} overflow-hidden ${image.rounded} shadow-[0_20px_70px_-20px_rgba(0,0,0,0.55),0_20px_70px_-28px_rgba(255,95,218,0.24)] ring-1 ring-white/20 transition-shadow duration-500 hover:shadow-[0_30px_90px_-20px_rgba(0,0,0,0.65),0_28px_90px_-30px_rgba(255,43,214,0.2)] hover:ring-white/40`}
       >
         <img
           src={image.src}
@@ -186,7 +186,7 @@ function ParallaxImage({ image, scrollYProgress }) {
           className="aspect-[4/3] h-full w-full object-cover transition-transform duration-700 ease-out hover:scale-110"
         />
       </div>
-    </motion.div>
+    </Motion.div>
   );
 }
 
@@ -202,24 +202,24 @@ const ParallaxGallery = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative overflow-hidden bg-[#0a0a0f]"
+      className="relative overflow-hidden bg-[#000000]"
       style={{ minHeight: '110vh' }}
     >
       {/* Ambient background glow */}
-      <motion.div className="absolute inset-0" style={{ y: bgY }}>
-        <div className="absolute left-1/4 top-1/4 h-[500px] w-[500px] rounded-full bg-purple-600/15 blur-[120px]" />
-        <div className="absolute bottom-1/4 right-1/4 h-[400px] w-[400px] rounded-full bg-blue-500/12 blur-[100px]" />
-        <div className="absolute left-1/2 top-1/2 h-[350px] w-[350px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-emerald-500/8 blur-[100px]" />
-        <div className="absolute right-1/3 top-1/6 h-[300px] w-[300px] rounded-full bg-rose-500/10 blur-[90px]" />
-      </motion.div>
+      <Motion.div className="absolute inset-0" style={{ y: bgY }}>
+        <div className="absolute left-[18%] top-[18%] h-[500px] w-[500px] rounded-full bg-fuchsia-500/18 blur-[120px]" />
+        <div className="absolute bottom-[18%] right-[20%] h-[420px] w-[420px] rounded-full bg-pink-500/16 blur-[105px]" />
+        <div className="absolute left-1/2 top-1/2 h-[350px] w-[350px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-violet-500/10 blur-[100px]" />
+        <div className="absolute right-[34%] top-[20%] h-[300px] w-[300px] rounded-full bg-rose-500/12 blur-[90px]" />
+      </Motion.div>
 
       {/* Subtle grain texture */}
       <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJhIj48ZmVUdXJidWxlbmNlIHR5cGU9ImZyYWN0YWxOb2lzZSIgYmFzZUZyZXF1ZW5jeT0iLjc1Ii8+PC9maWx0ZXI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsdGVyPSJ1cmwoI2EpIiBvcGFjaXR5PSIuMDUiLz48L3N2Zz4=')] opacity-40" />
 
       {/* Center headline */}
-      <div className="absolute inset-0 z-[10] flex items-center justify-center pointer-events-none">
+      <div className="pointer-events-none absolute inset-0 z-[10] flex items-center justify-center">
         <div className="text-center px-4">
-          <motion.p
+          <Motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -227,28 +227,28 @@ const ParallaxGallery = () => {
             className="text-[11px] font-black uppercase tracking-[0.4em] text-white/40"
           >
             Handpicked visuals
-          </motion.p>
-          <motion.h2
+          </Motion.p>
+          <Motion.h2
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="mt-4 font-heading text-5xl sm:text-6xl lg:text-7xl font-bold text-white/90 leading-[1.05] max-w-3xl"
+            className="mt-4 max-w-3xl font-heading text-5xl font-bold leading-[1.05] text-white/90 sm:text-6xl lg:text-7xl"
           >
             Assets that move
-            <span className="block bg-gradient-to-r from-violet-400 via-fuchsia-400 to-cyan-400 bg-clip-text text-transparent">
+            <span className="block bg-gradient-to-r from-fuchsia-300 via-violet-300 to-orange-300 bg-clip-text text-transparent">
               as bold as you do.
             </span>
-          </motion.h2>
-          <motion.p
+          </Motion.h2>
+          <Motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="mt-5 text-base sm:text-lg text-white/35 max-w-xl mx-auto leading-relaxed"
+            className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-white/35 sm:text-lg"
           >
             Scroll to explore — every piece is designed to make your next project unforgettable.
-          </motion.p>
+          </Motion.p>
         </div>
       </div>
 
@@ -264,8 +264,8 @@ const ParallaxGallery = () => {
       </div>
 
       {/* Top / bottom fade edges */}
-      <div className="absolute inset-x-0 top-0 z-[8] h-32 bg-gradient-to-b from-[#0a0a0f] to-transparent" />
-      <div className="absolute inset-x-0 bottom-0 z-[8] h-32 bg-gradient-to-t from-[#0a0a0f] to-transparent" />
+      <div className="absolute inset-x-0 top-0 z-[8] h-32 bg-gradient-to-b from-[#000000] to-transparent" />
+      <div className="absolute inset-x-0 bottom-0 z-[8] h-32 bg-gradient-to-t from-[#000000] to-transparent" />
     </section>
   );
 };
