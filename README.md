@@ -1,6 +1,6 @@
-# Marketly - Digital Asset Marketplace
+# Quantas - Digital Asset Marketplace
 
-Marketly is a premium, enterprise-grade digital marketplace for high-quality themes, UI kits, and professional assets. It is built with a focus on clean aesthetics, high performance, and a seamless user experience.
+Quantas is a premium, enterprise-grade digital marketplace for high-quality themes, UI kits, and professional assets. It is built with a focus on clean aesthetics, high performance, and a seamless user experience.
 
 ## 🚀 Key Features
 
@@ -22,7 +22,7 @@ Marketly is a premium, enterprise-grade digital marketplace for high-quality the
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/swarajladke/Marketly.git
+   git clone https://github.com/swarajladke/Quantas.git
    ```
 
 2. **Install dependencies**:

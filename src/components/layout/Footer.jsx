@@ -53,9 +53,9 @@ const Footer = () => {
           <div>
             <Link to="/" className="mb-6 flex items-center gap-2">
               <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-brand-gradient text-xl font-bold text-white shadow-neon">
-                M
+                Q
               </div>
-              <span className="font-heading text-2xl font-bold tracking-tight text-white">Marketly</span>
+              <span className="font-heading text-2xl font-bold tracking-tight text-white">Quantas</span>
             </Link>
             <p className="mb-6 text-white/68">
               Buy premium themes, plugins, and templates built by one passionate creator. High quality, well-documented assets for your next project.
@@ -114,9 +114,8 @@ const Footer = () => {
         </div>
 
         <div className="flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 md:flex-row">
-          <p className="text-center text-sm text-white/45">
-            &copy; {new Date().getFullYear()} Marketly. All rights reserved.
-          </p>
+            &copy; {new Date().getFullYear()} Quantas. All rights reserved.
+
           <div className="flex gap-3 text-2xl text-white/38">
             <FaStripe className="transition-colors hover:text-primary" />
             <FaPaypal className="transition-colors hover:text-primary" />

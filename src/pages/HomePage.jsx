@@ -474,7 +474,7 @@ const HomePage = () => {
               />
               <DownloadImageButton
                 imageUrl={leftPanelImage}
-                filename="marketly-visual-anchor"
+                filename="quantas-visual-anchor"
                 className="absolute right-6 top-6 z-10 opacity-0 group-hover:opacity-100"
               />
               <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(15,23,42,0.04),rgba(15,23,42,0.35)_42%,rgba(15,23,42,0.88))]"></div>

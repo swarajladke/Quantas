@@ -103,7 +103,7 @@ export const products = Array.from({ length: 20 }, (_, i) => {
     rating,
     reviewCount,
     sales,
-    createdBy: "Marketly Studio",
+    createdBy: "Quantas Studio",
     previewImage: `https://picsum.photos/seed/prod${i}/900/700`,
     badge: preset.badge,
     tags: preset.tags,

@@ -94,12 +94,10 @@ const Navbar = () => {
       <div className="mx-auto flex w-full max-w-[1440px] items-center justify-between gap-4">
         {/* Logo */}
         <Link to="/" className="flex shrink-0 items-center gap-2">
-          <div className="flex h-9 w-9 items-center justify-center rounded-lg text-xl font-bold text-white bg-brand-gradient shadow-[0_0_30px_rgba(255,95,218,0.3)]">
-            M
-          </div>
-          <span className="font-heading text-2xl font-bold tracking-tight text-white">
-            Marketly
-          </span>
+            Q
+
+            Quantas
+
         </Link>
 
         {/* Search Bar - Center Pill */}
@@ -331,9 +329,8 @@ const Navbar = () => {
           </div>
         </div>
         <div className="border-t border-white/10 p-4">
-          <div className="text-center text-xs text-white/42">
-            &copy; {new Date().getFullYear()} Marketly Store
-          </div>
+            &copy; {new Date().getFullYear()} Quantas Store
+
         </div>
       </div>
     </nav>
